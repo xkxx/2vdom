@@ -37,9 +37,9 @@ let vdom = parse(pragma, html);
 ### Usage with virtual-dom
 
 ```js
-let pragma = (tagname, attrs, ...children) => {
+let pragma = (tagname, attrs, ...children) =>
   h(tagname, attrs, children);
-}
+
 // carry on as usual ...
 let vdom = parse(pragma, html);
 ```
