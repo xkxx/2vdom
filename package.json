@@ -1,0 +1,16 @@
+{
+  "name": "2vdom",
+  "description:": "Parse HTML into vdom of your favorite vdom dialect",
+  "repository": "",
+  "README": "README.md",
+  "license": "BSD",
+  "main": "index.js",
+  "devDependencies": {
+    "babel-core": "^6.4.5",
+    "babel-plugin-transform-react-jsx": "^6.4.0",
+    "deku": "^2.0.0-rc16"
+  },
+  "dependencies": {
+    "htmlparser2": "^3.9.0"
+  }
+}
