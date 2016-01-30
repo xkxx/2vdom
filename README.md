@@ -26,9 +26,11 @@ Usage
 ### Usage with React / Deku / ...
 
 ```js
+let parse = require('2vdom');
+
 let html = "<html>...</html>";
 let pragma = React.createElement || deku.element || <some jsx pragma fn>;
-let parse = require('2vdom');
+
 let vdom = parse(pragma, html);
 ```
 
