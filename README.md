@@ -1,9 +1,9 @@
 2vdom
 =====
 
-A node library for Parsing HTML into the vdom of your choice.
+A node library for parsing HTML into the vdom of your choice.
 
-Differences from (html-virtualize)[https://github.com/alexmingoia/html-virtualize]:
+Differences from [html-virtualize](https://github.com/alexmingoia/html-virtualize):
 
 * 2vdom doesn't restrict you to [virtual-dom](https://github.com/Matt-Esch/virtual-dom).
   Pass in the jsx-compatible pragma function from your framework (or write one),
