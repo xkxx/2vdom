@@ -15,15 +15,30 @@ Differences from [html-virtualize](https://github.com/alexmingoia/html-virtualiz
   [htmlparser2](https://github.com/fb55/htmlparser2).
 
 Usage
+-----
+
+### Installation
 
 ```bash
 > npm install 2vdom
 ```
 
+### Usage with React / Deku / ...
+
 ```js
 let html = "<html>...</html>";
 let pragma = React.createElement || deku.element || <some jsx pragma fn>;
 let parse = require('2vdom');
+let vdom = parse(pragma, html);
+```
+
+### Usage with virtual-dom
+
+```js
+let pragma = (tagname, attrs, ...children) => {
+  h(tagname, attrs, children);
+}
+// carry on as usual ...
 let vdom = parse(pragma, html);
 ```
 
