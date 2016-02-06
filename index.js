@@ -1,5 +1,6 @@
 var htmlparser = require('htmlparser2');
 var assert = require('assert');
+var debuglog = require('util').debuglog('2vdom');
 
 var parse = function (jsxHandler, html) {
   var tree_stack = [];
@@ -7,11 +8,11 @@ var parse = function (jsxHandler, html) {
 
   var vDomHandler = {
     onopentag: function(name, attribs) {
-      console.info(name, attribs)
+      debuglog('open tag:', name, attribs);
       tree_stack.push([name, attribs]);
     },
     ontext: function(text) {
-      console.info(text);
+      debuglog('text:', text);
       assert.notEqual(tree_stack.length, 0,
         "HTML root level cannot contain text node");
 
@@ -39,8 +40,8 @@ var parse = function (jsxHandler, html) {
     },
     // TODO: how to handle doctype?
     onprocessinginstruction: function(name, data) {
-      console.info(name, data);
-    }
+      debuglog('directive: ', name, data);
+    },
   }
 
   var parser = new htmlparser.Parser(vDomHandler);

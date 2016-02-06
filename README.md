@@ -44,6 +44,21 @@ let pragma = (tagname, attrs, ...children) =>
 let vdom = parse(pragma, html);
 ```
 
+### Limitations
+
+There's a number of limitations of 2vdom that should not affect normal usage.
+However, if you have any use cases that doesn't work without them or good ideas
+for overcoming them, please issue or PR.
+
+* 2vdom doesn't currently preserve comments. So if you rely on IE conditional
+  comments, you are in a bit of a trouble here. This is an inherent limitation
+  of JSX, because there's no way of conveying comments to vdom pragma functions.
+* 2vdom doesn't currently preserve HTML directives e.g. `<!doctype>` Again,
+  because there's no way of conveying these to pragma functions.
+* 2vdom expects a single element (i.e. `<html>`) at document root. If you have
+  multiple ones, 2vdom throws away every one but the last element. This is not
+  a technical limitation, so let me know if you need this feature.
+
 Testing
 -------
 
