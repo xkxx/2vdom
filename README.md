@@ -1,7 +1,7 @@
 2vdom
 =====
 
-A node library for parsing HTML into the vdom of your choice.
+A node library for parsing HTML into vdom of your choice.
 
 Differences from [html-virtualize](https://github.com/alexmingoia/html-virtualize):
 

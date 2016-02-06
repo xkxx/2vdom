@@ -1,6 +1,6 @@
 {
   "name": "2vdom",
-  "description:": "Framework-agnostic library for parsing HTML into the vdom of your choice",
+  "description:": "Framework-agnostic library for parsing HTML into vdom of your choice",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/xkxx/2vdom.git"
@@ -16,8 +16,7 @@
   "dependencies": {
     "htmlparser2": "~3.9.0"
   },
-  "version": "0.1.0",
-  "description": "Parse HTML into vdom of your favorite vdom dialect",
+  "version": "0.1.1",
   "scripts": {
     "test": "jasmine"
   },
