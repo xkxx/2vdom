@@ -10,7 +10,8 @@
   "devDependencies": {
     "babel-core": "^6.4.5",
     "babel-plugin-transform-react-jsx": "^6.4.0",
-    "deku": "^2.0.0-rc16"
+    "deku": "^2.0.0-rc16",
+    "virtual-dom": "^2.1.1"
   },
   "dependencies": {
     "htmlparser2": "~3.9.0"
