@@ -1,6 +1,8 @@
 2vdom
 =====
 
+[![npm version](https://badge.fury.io/js/2vdom.svg)](https://badge.fury.io/js/2vdom)
+
 A node library for parsing HTML into vdom of your choice.
 
 Differences from [html-virtualize](https://github.com/alexmingoia/html-virtualize):
