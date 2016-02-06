@@ -16,7 +16,7 @@
   "dependencies": {
     "htmlparser2": "^3.9.0"
   },
-  "version": "0.1.1",
+  "version": "0.1.2",
   "scripts": {
     "test": "jasmine"
   },
