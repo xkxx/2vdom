@@ -47,7 +47,7 @@ let vdom = parse(pragma, html);
 ### Limitations
 
 There's a number of limitations of 2vdom that should not affect normal usage.
-However, if you have any use cases that doesn't work without them or good ideas
+However, if you encounter them in any actual use case or if you have good ideas
 for overcoming them, please issue or PR.
 
 * 2vdom doesn't currently preserve comments. So if you rely on IE conditional
