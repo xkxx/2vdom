@@ -2,7 +2,7 @@ var htmlparser = require('htmlparser2');
 var assert = require('assert');
 var debuglog = require('util').debuglog('2vdom');
 
-VDomHandler = function(jsxHandler) {
+var VDomHandler = function(jsxHandler) {
   this.jsxHandler = jsxHandler;
   this.treeStack = [];
   this.resultTree = null;
@@ -27,7 +27,7 @@ VDomHandler.prototype = {
     assert.notEqual(treeStack.length, 0,
       "Can't close tags without opening one");
 
-      var nodeArgs = treeStack.pop();
+    var nodeArgs = treeStack.pop();
 
     assert.equal(name, nodeArgs[0],
       "Opening and closing tagname must match");
