@@ -27,13 +27,13 @@ Usage
 
 ### Top-level API
 
-parse(pragma, html | buffer)
+#### parse(pragma, html | buffer)
 
 * `pragma`: jsx-compatible pragma function, e.g. React.createElement
 * `html`: html to parse. May be an ordinary js string or Node.js Buffer
 * *Returns*: parsed tree produced by your pragma function
 
-parse.stream(pragma, stream)
+#### parse.stream(pragma, stream)
 
 * stream: Node.js ReadStream containing the html to be parsed
 * **Returns*: a `Promise` that resolves to the parsed tree.
