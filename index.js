@@ -6,7 +6,7 @@ var VDomHandler = function(jsxHandler) {
   this.jsxHandler = jsxHandler;
   this.treeStack = [];
   this.resultTree = null;
-}
+};
 
 VDomHandler.prototype = {
   onopentag: function(name, attribs) {
@@ -16,9 +16,13 @@ VDomHandler.prototype = {
   ontext: function(text) {
     debuglog('text:', text);
     var treeStack = this.treeStack;
-    assert.notEqual(treeStack.length, 0,
-      "HTML root level cannot contain text node");
-
+    if (treeStack.length == 0) {
+      // ignore leading & terminating whitespace in html
+      if (text.trim()) {
+        assert.fail("HTML root level cannot contain text node");
+      }
+      return;
+    }
     var parent = treeStack[treeStack.length - 1];
     parent.push(text);
   },
