@@ -25,6 +25,19 @@ Usage
 > npm install 2vdom
 ```
 
+### Top-level API
+
+parse(pragma, html | buffer)
+
+* `pragma`: jsx-compatible pragma function, e.g. React.createElement
+* `html`: html to parse. May be an ordinary js string or Node.js Buffer
+* *Returns*: parsed tree produced by your pragma function
+
+parse.stream(pragma, stream)
+
+* stream: Node.js ReadStream containing the html to be parsed
+* **Returns*: a `Promise` that resolves to the parsed tree.
+
 ### Usage with React / Deku / ...
 
 ```js
@@ -34,9 +47,11 @@ let html = "<html>...</html>";
 let pragma = React.createElement || deku.element || <some jsx pragma fn>;
 
 let vdom = parse(pragma, html);
+// Buffer works too:
+parse(pragma, fs.readFileSync('<filename>'))
 ```
 
-### Usage with virtual-dom
+### Usage with virtual-dom (hyperscript)
 
 ```js
 let pragma = (tagname, attrs, ...children) =>
@@ -44,6 +59,17 @@ let pragma = (tagname, attrs, ...children) =>
 
 // carry on as usual ...
 let vdom = parse(pragma, html);
+```
+
+### Usage with node.js streams
+
+```js
+let fileStream = fs.createReadStream('<filename>');
+
+parse.stream(pragma, fileStream)
+.then(function(vdom) {
+  // your code here ...
+});
 ```
 
 ### Limitations
