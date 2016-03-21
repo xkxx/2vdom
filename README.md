@@ -36,7 +36,7 @@ Usage
 #### parse.stream(pragma, stream)
 
 * stream: Node.js ReadStream containing the html to be parsed
-* **Returns*: a `Promise` that resolves to the parsed tree.
+* *Returns*: a `Promise` that resolves to the parsed tree.
 
 ### Usage with React / Deku / ...
 
